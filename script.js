@@ -1,3 +1,7 @@
+// Configuration constants
+const AUTO_ROTATE_INTERVAL_MS = 10000; // Auto-rotate facts every 10 seconds
+const ANIMATION_RESET_DELAY_MS = 50; // Small delay to trigger CSS animation restart
+
 // Array of language learning facts
 const languageFacts = [
     "The best age to learn a language is... any age! While children pick up languages easily, adults have better problem-solving skills and can learn grammar more systematically.",
@@ -28,7 +32,7 @@ function displayFact(index) {
     setTimeout(() => {
         factText.textContent = languageFacts[index];
         factText.style.animation = 'fadeIn 0.5s ease-in';
-    }, 50);
+    }, ANIMATION_RESET_DELAY_MS);
 }
 
 // Function to show next fact
@@ -44,6 +48,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add click event to button
     document.getElementById('nextFactBtn').addEventListener('click', nextFact);
     
-    // Auto-rotate facts every 10 seconds
-    setInterval(nextFact, 10000);
+    // Auto-rotate facts
+    setInterval(nextFact, AUTO_ROTATE_INTERVAL_MS);
 });
