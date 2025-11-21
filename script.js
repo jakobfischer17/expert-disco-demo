@@ -28,7 +28,7 @@ function displayFact(index) {
     const factText = document.getElementById('factText');
     factText.style.animation = 'none';
     
-    // Trigger reflow to restart animation
+    // Small delay to allow animation reset before applying new animation
     setTimeout(() => {
         factText.textContent = languageFacts[index];
         factText.style.animation = 'fadeIn 0.5s ease-in';
